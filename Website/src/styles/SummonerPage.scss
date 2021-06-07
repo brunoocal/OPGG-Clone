@@ -1,0 +1,124 @@
+.SummonerPage {
+  font-family: "Poppins";
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-color: #181818;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5% 2.5% 0px 2.5%;
+
+  .ProfileInfo {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .profileIcon {
+      height: 175px;
+      width: 55%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        height: 95%;
+        width: auto;
+      }
+
+      .border {
+        position: absolute;
+        height: 110%;
+        width: auto;
+      }
+    }
+
+    h1.profileInfoHeading {
+      margin-top: 1.5%;
+      color: rgba(255, 255, 255, 0.87);
+      font-size: 30px;
+      letter-spacing: 2.2px;
+    }
+
+    hr {
+      height: 1px;
+      width: 80%;
+      background-color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .emblem-container {
+        height: 180px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+
+        &.first {
+          margin-top: 15px;
+        }
+      }
+
+      span.ranked-span {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 22px;
+        margin-top: 1.5%;
+      }
+
+      span.rankeds-lp {
+        color: rgba(255, 255, 255, 0.93);
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      span.wins {
+        color: hsl(200, 100%, 56%);
+        font-size: 22px;
+        margin-top: 1.5%;
+      }
+
+      span.losses {
+        color: hsl(0deg 90% 65%);
+        font-size: 22px;
+        margin-top: 1.5%;
+      }
+
+      h1.ranked-title {
+        color: rgba(255, 255, 255, 0.93);
+        font-weight: 400;
+        font-size: 26px;
+        letter-spacing: 1px;
+      }
+
+      h2.ranked-subtitle {
+        color: rgba(255, 255, 255, 0.87);
+        font-weight: 300;
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .ProfileGames {
+    height: 100%;
+    width: 55%;
+  }
+  .ProfileStats {
+    width: 20%;
+    height: 100%;
+  }
+}

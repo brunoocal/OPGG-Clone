@@ -1,13 +1,18 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Header.scss"
+import "../styles/Header.scss";
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  heightMode?: string;
+}
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ heightMode }) => {
   return (
     <>
-      <div className="header">
+      <div
+        className="header"
+        style={{ height: `${heightMode === "short" ? "120px" : "160px"}` }}
+      >
         <Link to="/" className="item">
           Home
         </Link>
