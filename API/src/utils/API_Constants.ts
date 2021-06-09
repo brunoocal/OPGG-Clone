@@ -137,9 +137,9 @@ export const constants = {
   },
 
   borders: {
-    image: "http://localhost:3005/static/borders/",
+    image: "http://localhost:3000/static/borders/",
   },
   emblems: {
-    image: "http://localhost:3005/static/emblems/",
+    image: "http://localhost:3000/static/emblems/",
   },
 };
