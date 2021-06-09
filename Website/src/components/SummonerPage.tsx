@@ -38,10 +38,6 @@ const SummonerPage: React.FC<SummonerPageProps> = () => {
             <section className="ProfileInfo">
               <div className="profileIcon">
                 <img className="icon" src={basicSummonerData.profileIconURL} />
-                <img
-                  className="border"
-                  src={basicSummonerData.profileBorderURL}
-                />
               </div>
               <h1 className="profileInfoHeading">
                 {basicSummonerData.summonerName}

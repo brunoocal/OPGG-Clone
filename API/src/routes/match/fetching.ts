@@ -33,12 +33,18 @@ export const fetchMatch = async (matchId: string) => {
 
   const participantData = [];
 
-  for (const participant of matchInfoData.info.participants) {
-    const participantDisplayInfo = {
-      summonerName: participant.summonerName,
-      displayImageChampionURL: `${constants.datadragon.base}${constants.datadragon.champion.square}${participant.championName}.png`,
-    };
-    participantData.push(participantDisplayInfo);
+  console.log(matchInfoData);
+
+  try {
+    for (const participant of matchInfoData.info.participants) {
+      const participantDisplayInfo = {
+        summonerName: participant.summonerName,
+        displayImageChampionURL: `${constants.datadragon.base}${constants.datadragon.champion.square}${participant.championName}.png`,
+      };
+      participantData.push(participantDisplayInfo);
+    }
+  } catch (e) {
+    participantData.push(matchInfoData);
   }
 
   matchInfo = {

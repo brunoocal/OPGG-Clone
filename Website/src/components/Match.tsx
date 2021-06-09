@@ -8,6 +8,7 @@ const Match: React.FC<MatchProps> = ({ matchId }) => {
   const [data, setData] = React.useState(null);
   const [splittedMatchParticipants, setMatchParticipants] =
     React.useState(null);
+  const [active, setActive] = React.useState(true);
 
   React.useEffect(() => {
     if (!data) {
@@ -18,10 +19,15 @@ const Match: React.FC<MatchProps> = ({ matchId }) => {
         const { body } = await req.json();
         setData(await body);
 
-        console.log(body);
-        const partsData = await body.firstDisplayeableData;
+        if (body.status) {
+          setActive(false);
+        } else {
+          const partsData = await body.firstDisplayeableData;
 
-        setMatchParticipants([partsData.slice(0, 5), partsData.slice(5, 10)]);
+          setMatchParticipants([partsData.slice(0, 5), partsData.slice(5, 10)]);
+        }
+
+        console.log(body);
       })();
     }
   }, []);
@@ -34,12 +40,14 @@ const Match: React.FC<MatchProps> = ({ matchId }) => {
     );
   }
 
+  if (!active) {
+    return null;
+  }
+
   return (
     <>
       <div className="match">
-          <div className="resto">
-              
-          </div>
+        <div className="resto"></div>
         <div className="teams">
           {splittedMatchParticipants &&
             splittedMatchParticipants.map((team: Record<string, string>[]) => (
